@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-05-11T21:01:51.947Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="Zm7Q0v0wjUjh6FXBIHxg" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-11T23:18:11.629Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0 (Edition std-1)" etag="QRM2lctIvLzloz_nbpoV" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1633" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1161" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-1" value="" style="endArrow=none;html=1;rounded=0;entryX=0.625;entryY=0.419;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-1" value="" style="endArrow=none;html=1;rounded=0;entryX=0.625;entryY=0.419;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="644" y="324" as="sourcePoint" />
             <mxPoint x="704" y="400.01" as="targetPoint" />
@@ -103,13 +103,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZUrId8Ltw5tMt6VpQhxR-152" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
+        <mxCell id="ZUrId8Ltw5tMt6VpQhxR-152" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1" target="ZUrId8Ltw5tMt6VpQhxR-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="375" y="300" as="sourcePoint" />
-            <mxPoint x="355" y="172" as="targetPoint" />
+            <mxPoint x="370" y="311" as="sourcePoint" />
+            <mxPoint x="350" y="183" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="375" y="232" />
-              <mxPoint x="355" y="232" />
+              <mxPoint x="370" y="243" />
+              <mxPoint x="350" y="243" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -155,14 +155,8 @@
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-73" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="272" y="336" as="sourcePoint" />
-            <mxPoint x="340" y="336" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZUrId8Ltw5tMt6VpQhxR-72" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="265" y="324" as="sourcePoint" />
-            <mxPoint x="340" y="324" as="targetPoint" />
+            <mxPoint x="284" y="330" as="sourcePoint" />
+            <mxPoint x="352" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-1" value="User" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
@@ -543,21 +537,8 @@
             <mxPoint x="811" y="320.25" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZUrId8Ltw5tMt6VpQhxR-151" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="365" y="300" as="sourcePoint" />
-            <mxPoint x="345" y="180" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="365" y="240" />
-              <mxPoint x="345" y="240" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZUrId8Ltw5tMt6VpQhxR-154" value="f" style="triangle;whiteSpace=wrap;html=1;fillColor=#000000;rotation=90;" parent="1" vertex="1">
-          <mxGeometry x="360" y="282.5" width="20" height="32.5" as="geometry" />
-        </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-155" value="IC-6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="342" y="205.75" width="60" height="30" as="geometry" />
+          <mxGeometry x="339" y="216.38" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-156" value="" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" target="ZUrId8Ltw5tMt6VpQhxR-54" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -591,9 +572,6 @@
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-161" value="f" style="triangle;whiteSpace=wrap;html=1;fillColor=#000000;rotation=-180;" parent="1" vertex="1">
           <mxGeometry x="393" y="392.75" width="20" height="32.5" as="geometry" />
-        </mxCell>
-        <mxCell id="ZUrId8Ltw5tMt6VpQhxR-162" value="f" style="triangle;whiteSpace=wrap;html=1;fillColor=#000000;rotation=0;" parent="1" vertex="1">
-          <mxGeometry x="330" y="313.75" width="20" height="32.5" as="geometry" />
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-163" value="payed with &amp;lt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="339" y="423.25" width="70" height="30" as="geometry" />
@@ -676,64 +654,64 @@
         <mxCell id="w_Vurp3yM-LyXLpynN1f-26" value="Processes &amp;lt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="559" y="240.13" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-2" value="Isto muito prob esta mal, prob é uma ligação produto armazem (ligação entrega) e uma supplier product (contrato)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-2" value="Isto muito prob esta mal, prob é uma ligação produto armazem (ligação entrega) e uma supplier product (contrato)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="965" y="30" width="190" height="67.5" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-4" value="IC-3: Delivery Number is unique and&amp;nbsp;immutable" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-4" value="IC-3: Delivery Number is unique and&amp;nbsp;immutable" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="4" y="650" width="265" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-5" value="IC-1: ID is unique and&amp;nbsp;immutable" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-5" value="IC-1: ID is unique and&amp;nbsp;immutable" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="5" y="619" width="185" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-6" value="IC-2: Can&#39;t be seen by operators" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-6" value="IC-2: Can&#39;t be seen by operators" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="4" y="634" width="185" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-7" value="IC-4: Has at least more than one" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-7" value="IC-4: Has at least more than one" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="5" y="664" width="185" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-8" value="IC-5: A payment method cannot retry itself when it fails" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-8" value="IC-5: A payment method cannot retry itself when it fails" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="3" y="678" width="305" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-9" value="IC-6: Users can only pay for their deliveries" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-9" value="IC-6: Users can only pay for their deliveries" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="7" y="692" width="238" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-10" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-10" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1020" y="102.5" as="sourcePoint" />
             <mxPoint x="960" y="140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-11" value="Qual a Key?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-11" value="Qual a Key?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="640" y="630" width="110" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-12" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-12" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="690" y="630" as="sourcePoint" />
             <mxPoint x="690" y="600" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-15" value="Department é um atributo ou não?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-15" value="Department é um atributo ou não?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="635" y="660" width="110" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-16" value="Perceber qual a weak entity que nos falta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-16" value="Perceber qual a weak entity que nos falta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="795.5" y="578" width="160" height="41" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-17" value="Esclarecer critérios de weak entities com o stor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-17" value="Esclarecer critérios de weak entities com o stor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="800" y="624" width="150" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-18" value="Verificar se estão todos os IC (de momento não)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-18" value="Verificar se estão todos os IC (de momento não)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1000" y="612" width="150" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-19" value="Um cliente pode não ter encomendas?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-19" value="Um cliente pode não ter encomendas?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1005" y="570.25" width="135" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-20" value="O token é único entre users ou o mesmo payment method de duas pessoas diferentes tem o mesmo token?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-20" value="O token é único entre users ou o mesmo payment method de duas pessoas diferentes tem o mesmo token?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="974.75" y="662.25" width="185" height="59.75" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-22" value="Será que o produto é a weak entity por poder haver produtos com o mesmo nome? Apesar de SKU distinguir entre produtos?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-22" value="Será que o produto é a weak entity por poder haver produtos com o mesmo nome? Apesar de SKU distinguir entre produtos?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="805.5" y="678" width="152" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-23" value="Verificar a key dos empregados visto que o enunciado nao diz nada, possivel weak entity?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-23" value="Verificar a key dos empregados visto que o enunciado nao diz nada, possivel weak entity?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="350" y="588" width="220" height="46" as="geometry" />
         </mxCell>
       </root>
