@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-11T20:40:20.771Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="sK5hoHicbc_NWuP4PX0j" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-11T20:47:13.851Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="C9U_s7rDvYDW0al8gAao" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1633" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -304,7 +304,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-60" value="Payment Day" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="460" y="435" width="80" height="40" as="geometry" />
+          <mxGeometry x="490" y="378.25" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-62" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="ZUrId8Ltw5tMt6VpQhxR-54" target="ZUrId8Ltw5tMt6VpQhxR-60" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -676,8 +676,8 @@
         <mxCell id="w_Vurp3yM-LyXLpynN1f-26" value="Processes &amp;lt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="559" y="240.13" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-2" value="Isto muito prob esta mal, prob é uma ligação produto armazem e uma supplier product" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1060" y="77.5" width="60" height="30" as="geometry" />
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-2" value="Isto muito prob esta mal, prob é uma ligação produto armazem (ligação entrega) e uma supplier product (contrato)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="965" y="30" width="190" height="67.5" as="geometry" />
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-4" value="IC-3: Delivery Number is unique and&amp;nbsp;immutable" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="4" y="650" width="265" height="30" as="geometry" />
@@ -696,6 +696,33 @@
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-9" value="IC-6: Users can only pay for their deliveries" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="7" y="692" width="238" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-10" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1020" y="102.5" as="sourcePoint" />
+            <mxPoint x="960" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-11" value="Qual a Key?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="630" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-12" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="630" as="sourcePoint" />
+            <mxPoint x="690" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-15" value="Department é um atributo ou não?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="635" y="660" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-16" value="Perceber qual a weak entity que nos falta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="609" width="120" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-17" value="Esclarecer critérios de weak entities com o stor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="666" width="115" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-18" value="Verificar se estão todos os IC (de momento não)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="708" width="110" height="38" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
