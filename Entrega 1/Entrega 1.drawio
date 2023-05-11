@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-11T20:47:13.851Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="C9U_s7rDvYDW0al8gAao" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-11T20:59:54.443Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="yI5gApfefS4UwUFpwnSx" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1633" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -716,13 +716,22 @@
           <mxGeometry x="635" y="660" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-16" value="Perceber qual a weak entity que nos falta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="609" width="120" height="41" as="geometry" />
+          <mxGeometry x="795.5" y="578" width="160" height="41" as="geometry" />
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-17" value="Esclarecer critérios de weak entities com o stor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1005" y="666" width="115" height="26" as="geometry" />
+          <mxGeometry x="800" y="624" width="150" height="26" as="geometry" />
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-18" value="Verificar se estão todos os IC (de momento não)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="708" width="110" height="38" as="geometry" />
+          <mxGeometry x="1000" y="612" width="150" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-19" value="Um cliente pode não ter encomendas?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="570.25" width="135" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-20" value="O token é único entre users ou o mesmo payment method de duas pessoas diferentes tem o mesmo token?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="974.75" y="662.25" width="185" height="59.75" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-22" value="Será que o produto é a weak entity por poder haver produtos com o mesmo nome? Apesar de SKU distinguir entre produtos?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="805.5" y="678" width="152" height="54" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
