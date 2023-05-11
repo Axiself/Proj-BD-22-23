@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-11T20:59:54.443Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="yI5gApfefS4UwUFpwnSx" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-11T21:01:51.947Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="Zm7Q0v0wjUjh6FXBIHxg" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1633" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -732,6 +732,9 @@
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-22" value="Será que o produto é a weak entity por poder haver produtos com o mesmo nome? Apesar de SKU distinguir entre produtos?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="805.5" y="678" width="152" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="46TZJhXJYuFMfr_SJ5w2-23" value="Verificar a key dos empregados visto que o enunciado nao diz nada, possivel weak entity?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="588" width="220" height="46" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
