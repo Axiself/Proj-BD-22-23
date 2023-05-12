@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-12T15:24:40.518Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="rx5m1_AZvqhNBcnl407B" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-12T15:25:13.429Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="TMDlbmr2jrkwKRRYI13T" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1364" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -691,7 +691,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-18" value="Verificar se estão todos os IC (de momento não)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1000" y="612" width="150" height="38" as="geometry" />
+          <mxGeometry x="974.75" y="670" width="150" height="38" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
