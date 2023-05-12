@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-05-12T18:50:40.047Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0 (Edition std-1)" etag="oqjEx3Hqunrm4-mrIYCm" version="21.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-12T18:57:06.135Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0 (Edition std-1)" etag="LfBMDCipJDAJAJt2JWvp" version="21.3.0" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1161" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1393" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -35,13 +35,13 @@
             <mxPoint x="770" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="w_Vurp3yM-LyXLpynN1f-14" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.35;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;shape=link;" parent="1" edge="1">
+        <mxCell id="w_Vurp3yM-LyXLpynN1f-14" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.35;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="644" y="403.13" as="sourcePoint" />
             <mxPoint x="700" y="403.38" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="w_Vurp3yM-LyXLpynN1f-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0.514;exitY=0.125;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=link;" parent="1" edge="1">
+        <mxCell id="w_Vurp3yM-LyXLpynN1f-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0.514;exitY=0.125;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="700" y="470.13" as="sourcePoint" />
             <mxPoint x="700.02" y="416.38" as="targetPoint" />
@@ -236,7 +236,7 @@
           <mxGeometry x="240" y="70" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-65" value="IC-2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="355" y="30" width="60" height="30" as="geometry" />
+          <mxGeometry x="355" y="25" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZUrId8Ltw5tMt6VpQhxR-67" value="" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="350" y="310" width="40" height="40" as="geometry" />
@@ -619,6 +619,12 @@
         </mxCell>
         <mxCell id="FprBJVWwfwfLv0C0FUNQ-7" value="&lt;span style=&quot;border-bottom: 1px dotted&quot;&gt;Token&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="170" y="383" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FprBJVWwfwfLv0C0FUNQ-9" value="IC-7" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="644" y="405" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FprBJVWwfwfLv0C0FUNQ-10" value="IC-7: Employee works in a department and in a workplace simultaneously" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="707" width="393" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
