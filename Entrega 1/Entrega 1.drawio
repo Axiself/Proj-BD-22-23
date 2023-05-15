@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-15T08:29:14.834Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="-ItFSLZ4uMKelwO8p7d0" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-15T09:06:01.882Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="2h1iKr9SXQLRkNPnYBA8" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1187" dy="731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -567,9 +567,6 @@
         </mxCell>
         <mxCell id="46TZJhXJYuFMfr_SJ5w2-9" value="IC-6: Users can only pay for their deliveries" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="7" y="692" width="238" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="46TZJhXJYuFMfr_SJ5w2-18" value="Verificar se estão todos os IC (de momento não)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="974.75" y="670" width="150" height="38" as="geometry" />
         </mxCell>
         <mxCell id="kogquihkq_1e7OlsO0tz-2" value="" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="1015" y="135" width="40" height="40" as="geometry" />
