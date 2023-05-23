@@ -1,16 +1,16 @@
-insert into parcel values (1,'2023-01-01',1);
-insert into parcel values (2,'2023-02-13',2);
-insert into parcel values (3,'2023-04-09',3);
-insert into parcel values (4,'2023-05-27',1);
-insert into parcel values (5,'2023-11-25',5);
-insert into parcel values (6,'2023-12-12',3);
-insert into parcel values (7,'2023-12-30',4);
+insert into parcel values (DEFAULT,'2023-01-01',1);
+insert into parcel values (DEFAULT,'2023-02-13',2);
+insert into parcel values (DEFAULT,'2023-04-09',3);
+insert into parcel values (DEFAULT,'2023-05-27',1);
+insert into parcel values (DEFAULT,'2023-11-25',5);
+insert into parcel values (DEFAULT,'2023-12-12',3);
+insert into parcel values (DEFAULT,'2023-12-30',4);
 
-insert into customer values (1,'Manuel Pereira',     'manuel345@hotmail.com','983838383','Rua das Galinhas');
-insert into customer values (2,'Josefina Silva',     'jsilva.pt@gmail.com',  '916990129','Rua das Caldeiras');
-insert into customer values (3,'Daniela Belchior',   'danibel98@hotmail.com','982942069','Avenida das Borboletas');
-insert into customer values (4,'Francisco Rodrigues','kikorod@sapo.pt',      '952637194','Rua do Monte de Cima');
-insert into customer values (5,'Miguel Seleiro',     'mseleiro@gmail.com',   '965783162','Estrada do Supermitra');
+insert into customer values (DEFAULT,'Manuel Pereira',     'manuel345@hotmail.com','983838383','Rua das Galinhas');
+insert into customer values (DEFAULT,'Josefina Silva',     'jsilva.pt@gmail.com',  '916990129','Rua das Caldeiras');
+insert into customer values (DEFAULT,'Daniela Belchior',   'danibel98@hotmail.com','982942069','Avenida das Borboletas');
+insert into customer values (DEFAULT,'Francisco Rodrigues','kikorod@sapo.pt',      '952637194','Rua do Monte de Cima');
+insert into customer values (DEFAULT,'Miguel Seleiro',     'mseleiro@gmail.com',   '965783162','Estrada do Supermitra');
 
 insert into sale values (1);
 insert into sale values (3);
