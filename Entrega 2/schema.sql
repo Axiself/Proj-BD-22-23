@@ -25,7 +25,7 @@ CREATE TABLE customer (
     email       VARCHAR(254),
     phone       VARCHAR(15) NOT NULL,
     cust_add    VARCHAR(255) NOT NULL,
-    PRIMARY KEY(cust_no),
+    PRIMARY KEY(cust_no),   
     UNIQUE(email),
     CHECK(LENGTH(email) > 5),
     CHECK(LENGTH(phone) > 2)
@@ -63,7 +63,7 @@ CREATE TABLE eanproduct (
     PRIMARY KEY(sku),
     FOREIGN KEY(sku) REFERENCES product(sku),
     CHECK (LENGTH(sku) > 7),
-    CHECK (ean = 'GS1__________')
+    CHECK (ean = 'GS1__________') --? wadduhell
 );
 
 CREATE TABLE supplier (
@@ -75,7 +75,7 @@ CREATE TABLE supplier (
     PRIMARY KEY(tin),
     FOREIGN KEY(sku) REFERENCES product(sku),
     CHECK (LENGTH(sku) > 7),
-    CHECK (tin = '_________-__')
+    CHECK (tin = '_________-__') --? wadduhell
 );
 
 CREATE TABLE employee(
@@ -86,7 +86,7 @@ CREATE TABLE employee(
     PRIMARY KEY(ssn),
     UNIQUE(tin),
     CHECK (LENGTH(tin) = 9),
-    CHECK (ssn = '___-__-____')
+    CHECK (ssn = '___-__-____') --? wadduhell
     -- IC-3: Every emplyee must exist in the table 'works'
 );
 
@@ -142,7 +142,7 @@ CREATE TABLE process (
     PRIMARY KEY(order_no, ssn),
     FOREIGN KEY(order_no) REFERENCES parcel(order_no),
     FOREIGN KEY(ssn) REFERENCES employee(ssn),
-    CHECK (ssn = '___-__-____')
+    CHECK (ssn = '___-__-____') --? wadduhell
 );
 
 CREATE TABLE works (
@@ -153,7 +153,7 @@ CREATE TABLE works (
     FOREIGN KEY(ssn) REFERENCES employee(ssn),
     FOREIGN KEY(dep_name) REFERENCES department(dep_name),
     FOREIGN KEY(work_add) REFERENCES workplace(work_add),
-    CHECK (ssn = '___-__-____')
+    CHECK (ssn = '___-__-____') --? wadduhell
 );
 
 CREATE TABLE delivery (

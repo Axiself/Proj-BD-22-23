@@ -12,7 +12,6 @@ insert into parcel values (DEFAULT,'2023-11-25',5);
 insert into parcel values (DEFAULT,'2023-12-12',3);
 insert into parcel values (DEFAULT,'2023-12-30',4);
 
-
 insert into sale values (1);
 insert into sale values (3);
 insert into sale values (4);
@@ -28,8 +27,8 @@ insert into product values('OIL-86420','Extra Virgin Olive Oil','Alentejo Natura
 insert into eanproduct values('BAN-12345','GS17389134814');
 insert into eanproduct values('RIC-24680','GS19394859123');
 
-insert into supplier values('12839471-SR','Salty Rice',     'Rua dos Alecrins',   '2019-05-07','SAL-67890');
-insert into supplier values('12839471-SR','Salty Rice',     'Rua dos Alecrins',   '2020-06-13','RIC-24680');
+insert into supplier values('12839471-ST','Salty Time',     'Rua dos Alecrins',   '2019-05-07','SAL-67890');
+insert into supplier values('14958313-DL','Deloitte',       'Rua dos Alecrins',   '2020-06-13','RIC-24680');
 insert into supplier values('14937593-ON','Oilly Needs',    'Rua do Paraiso',     '2021-10-27','OIL-86420');
 insert into supplier values('15631098-IB','InBath',         'Rua dos Setes Ceus', '2019-10-05','BW-13579');
 insert into supplier values('10123943-MP','Monkey Paradise','Travessa da Amorosa','2021-01-18','BAN-12345');
@@ -44,7 +43,7 @@ insert into department values('Customer Support');
 insert into workplace values('Rua do Sol',           25.6,893.90);
 insert into workplace values('Avenida das flores',   49.6,700.34);
 insert into workplace values('Rua dos Sonhos',       89.32,13.87);
-insert into workplace values('Avenida das Oliveiras',150.6,780.01);
+insert into workplace values('Avenida das Oliveiras',15.6,80.1);
 
 insert into office values('Rua do Sol');
 insert into office values('Avenida das Oliveiras');
@@ -69,14 +68,14 @@ insert into has values(6, 'BAN-12345', 20);
 insert into has values(7, 'OIL-86420', 4);
 
 insert into process values(2,'222-32-4534');
-insert into process values(6,'947-83-7469');
+insert into process values(1,'947-83-7469');
 
 insert into works values('398-25-9710','Human Resources','Rua do Sol');
 insert into works values('222-32-4534','Customer Support','Avenida das Oliveiras');
 insert into works values('947-83-7469','Human Resources','Rua dos Sonhos');
 
-insert into delivery values('Rua do Sol',        'SAL-67890','12839471-SR');
+insert into delivery values('Rua do Sol',        'SAL-67890','12839471-ST');
 insert into delivery values('Avenida das flores','BAN-12345','10123943-MP');
-insert into delivery values('Rua do Sol',        'RIC-24680','12839471-SR');
+insert into delivery values('Rua do Sol',        'RIC-24680','14958313-DL');
 insert into delivery values('Rua dos Sonhos',    'OIL-86420','14937593-ON');
-insert into delivery values('Avenida das flores','BW-13579','15631098-IB');
+insert into delivery values('Avenida das flores','BW-13579', '15631098-IB');
