@@ -62,8 +62,8 @@ CREATE TABLE eanproduct (
     ean         VARCHAR(13) NOT NULL,   -- Most widely used EAN code, the first two or three digits represent the country code or GS1 prefix, followed by the manufacturer code, the product code, and the final digit, which is a check digit for error detection.
     PRIMARY KEY(sku),
     FOREIGN KEY(sku) REFERENCES product(sku),
-    CHECK (LENGTH(sku) > 7)
-    -- CHECK (ean = 'GS1__________') --? wadduhell
+    CHECK (LENGTH(sku) > 7),
+    CHECK (ean LIKE 'GS1__________')
 );
 
 CREATE TABLE supplier (
@@ -74,8 +74,8 @@ CREATE TABLE supplier (
     sku             VARCHAR(12),
     PRIMARY KEY(tin),
     FOREIGN KEY(sku) REFERENCES product(sku),
-    CHECK (LENGTH(sku) > 7)
-    -- CHECK (tin = '_________-__') --? wadduhell
+    CHECK (LENGTH(sku) > 7),
+    CHECK (tin LIKE '_________-__')
 );
 
 CREATE TABLE employee(
@@ -85,8 +85,8 @@ CREATE TABLE employee(
     emp_name    VARCHAR(80) NOT NULL,
     PRIMARY KEY(ssn),
     UNIQUE(tin),
-    CHECK (LENGTH(tin) = 9)
-    -- CHECK (ssn = '___-__-____') --? wadduhell
+    CHECK (LENGTH(tin) = 9),
+    CHECK (ssn LIKE '___-__-____')
     -- IC-3: Every emplyee must exist in the table 'works'
 );
 
@@ -141,8 +141,8 @@ CREATE TABLE process (
     ssn         VARCHAR(11),
     PRIMARY KEY(order_no, ssn),
     FOREIGN KEY(order_no) REFERENCES parcel(order_no),
-    FOREIGN KEY(ssn) REFERENCES employee(ssn)
-    -- CHECK (ssn = '___-__-____') --? wadduhell
+    FOREIGN KEY(ssn) REFERENCES employee(ssn),
+    CHECK (ssn LIKE '___-__-____')
 );
 
 CREATE TABLE works (
@@ -152,8 +152,8 @@ CREATE TABLE works (
     PRIMARY KEY(ssn, dep_name, work_add),
     FOREIGN KEY(ssn) REFERENCES employee(ssn),
     FOREIGN KEY(dep_name) REFERENCES department(dep_name),
-    FOREIGN KEY(work_add) REFERENCES workplace(work_add)
-    -- CHECK (ssn = '___-__-____') --? wadduhell
+    FOREIGN KEY(work_add) REFERENCES workplace(work_add),
+    CHECK (ssn LIKE '___-__-____')
 );
 
 CREATE TABLE delivery (
