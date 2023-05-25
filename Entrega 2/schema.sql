@@ -75,7 +75,7 @@ CREATE TABLE supplier (
     PRIMARY KEY(tin),
     FOREIGN KEY(sku) REFERENCES product(sku),
     CHECK (LENGTH(sku) > 7),
-    CHECK (tin LIKE '_________-__')
+    CHECK (tin LIKE '________-__')
 );
 
 CREATE TABLE employee(
