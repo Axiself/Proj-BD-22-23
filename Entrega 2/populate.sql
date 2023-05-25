@@ -23,6 +23,7 @@ insert into product values('SAL-67890','Salt',                  'Thin salt 1kg',
 insert into product values('BW-13579', 'Body Gel',              'Dove Body Gel with orange scent 750ml',        6.49);
 insert into product values('RIC-24680','White Rice',            'Auchan white rice 250g',                       1.49);
 insert into product values('OIL-86420','Extra Virgin Olive Oil','Alentejo Natural extra virgin olive oil 750ml',5.93);
+insert into product values('VOD-34932','Vodka',                 'Pure vodka from Russia',                       50.49);
 
 insert into eanproduct values('BAN-12345','GS17389134814');
 insert into eanproduct values('RIC-24680','GS19394859123');
@@ -65,7 +66,7 @@ insert into has values(3, 'RIC-24680', 1);
 insert into has values(4, 'SAL-67890', 9);
 insert into has values(5, 'RIC-24680', 12);
 insert into has values(6, 'BAN-12345', 20);
-insert into has values(7, 'OIL-86420', 4);
+insert into has values(7, 'VOD-34932', 4);
 
 insert into process values(2,'222-32-4534');
 insert into process values(1,'947-83-7469');
