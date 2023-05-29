@@ -62,7 +62,7 @@ values  ('Rua do Sol',            25.6,893.90),
         ('Avenida das flores',    49.6,700.34),
         ('Rua dos Sonhos',        89.32,13.87),
         ('Avenida das Oliveiras', 15.6,80.1),
-        ('Avenida Duarte Pacheco',60.3.324.4);
+        ('Avenida Duarte Pacheco',60.7,324.4);
 
 insert into office
 values  ('Rua do Sol'),
