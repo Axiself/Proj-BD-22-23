@@ -15,7 +15,7 @@ SELECT DISTINCT a.prod_name
 FROM (
     SELECT product.sku, product.prod_name, SUM(has.qty) AS total_qty
     FROM sale NATURAL JOIN has NATURAL JOIN product
-    GROUP BY product.prod_name
+    GROUP BY product.sku
 ) AS a
 WHERE total_qty >= ALL (
     SELECT b.total_qty
