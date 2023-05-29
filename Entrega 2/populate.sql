@@ -27,7 +27,8 @@ values  ('BAN-12345','Banana',                'Bananas from Madeira 1kg',       
         ('BW-13579', 'Body Gel',              'Dove Body Gel with orange scent 750ml',        6.49),
         ('RIC-24680','White Rice',            'Auchan white rice 250g',                       1.49),
         ('OIL-86420','Extra Virgin Olive Oil','Alentejo Natural extra virgin olive oil 750ml',5.93),
-        ('VOD-34932','Vodka',                 'Pure vodka from Russia',                       50.49);
+        ('VOD-34932','Vodka',                 'Pure vodka from Russia',                       50.49),
+        ('WAB-12312','Wagyu Beef',            'Premium gourmet japanese beef',                126.85);
 
 insert into eanproduct
 values  ('BAN-12345','GS17389134814'),
