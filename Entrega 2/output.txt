@@ -2,6 +2,7 @@ OUTPUT QUERY 1:
 
 #|cust_name
 1|Francisco Rodrigues
+2|Miguel Seleiro
 
 
 
@@ -9,6 +10,7 @@ OUTPUT QUERY 2:
 
 #|emp_name
 1|Albertino Rocha
+2|Francisca Pires
 
 
 
@@ -27,3 +29,4 @@ OUTPUT QUERY 4:
 3|4       |19.62
 4|5       |17.88
 5|7       |201.96
+6|8       |126.85
