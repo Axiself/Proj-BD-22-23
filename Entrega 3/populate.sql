@@ -49,7 +49,7 @@ values  ('12839471-ST','Salty Time',     'Rua dos Alecrins',   'SAL-67890','2019
 
 insert into employee 
 values  ('222-32-4534',823791271,'1990-08-23','Joao Maria Augusto'),
-        ('398-25-9710',279301898,'2010-03-09','Maria Jose Gonçalves'),
+        ('398-25-9710',279301898,'2000-03-09','Maria Jose Gonçalves'),
         ('947-83-7469',238523471,'1994-06-03','Albertino Rocha'),
         ('340-29-4301',134587398,'1992-03-05','Francisca Pires');
 
