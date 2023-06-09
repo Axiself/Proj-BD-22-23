@@ -1,6 +1,11 @@
+DROP TRIGGER IF EXISTS check_mandatory_exclusive_workplace_specialisation ON workplace CASCADE;
+DROP TRIGGER IF EXISTS check_mandatory_order_participation ON orders CASCADE;
+
 ALTER TABLE employee
 ADD CONSTRAINT underage_employee_check
-CHECK (DATEDIFF(year, GETDATE(), NEW.bdate) >= 18);
+CHECK (
+    (CURRENT_DATE - employee.bdate) >= (365 * 18)
+);
 
 
 CREATE OR REPLACE FUNCTION check_mandatory_exclusive_workplace_specialisation()
@@ -19,7 +24,7 @@ $$
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER mandatory_workplace_exclusive_specialisation
-BEFORE INSERT OR UPDATE ON workplace
+AFTER INSERT OR UPDATE ON workplace DEFERRABLE
 FOR EACH ROW EXECUTE PROCEDURE check_mandatory_exclusive_workplace_specialisation();
 
 
@@ -34,6 +39,6 @@ $$
     END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER mandatory_order_participation
-BEFORE INSERT OR UPDATE ON order
+CREATE TRIGGER mandatory_order_participation 
+AFTER INSERT OR UPDATE ON orders DEFERRABLE
 FOR EACH ROW EXECUTE PROCEDURE check_mandatory_order_participation();

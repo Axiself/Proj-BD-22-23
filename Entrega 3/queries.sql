@@ -18,7 +18,7 @@ FROM(
 
 SELECT DISTINCT employee.name
 FROM employee NATURAL JOIN process NATURAL JOIN orders
-WHERE orders.date >= '2022-01-01' AND orders.date <= '2022-12-31';
+WHERE EXTRACT(YEAR FROM orders.date) = 2022;
 
 --Query 3
 
@@ -26,6 +26,6 @@ SELECT EXTRACT(MONTH FROM a.date) AS month, COUNT(*) AS no_of_orders
 FROM(
     SELECT order_no, date
     FROM orders
-    WHERE order_no NOT IN (SELECT order_no FROM pay)
+    WHERE order_no NOT IN (SELECT order_no FROM pay) AND EXTRACT(YEAR FROM date) = 2022
 ) as a
 GROUP BY EXTRACT(MONTH FROM a.date);
