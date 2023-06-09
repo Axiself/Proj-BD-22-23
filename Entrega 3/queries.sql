@@ -1,8 +1,7 @@
 --Query 1
 
-SELECT d.cust_no, d.name, GREATEST(c.total_price)
-FROM(
-    SELECT b.cust_no, SUM(b.order_price) as total_price
+WITH customer_total_price AS (
+    SELECT c.cust_no, c.name, SUM(b.order_price) as total_price
     FROM(
         SELECT DISTINCT a.cust_no, SUM(product_price) as order_price
         FROM(
@@ -10,9 +9,15 @@ FROM(
             FROM pay NATURAL JOIN contains NATURAL JOIN product
         ) AS a
         GROUP BY a.cust_no, a.order_no
-    ) AS b
-    GROUP BY b.cust_no
-) as c NATURAL JOIN customer AS d;
+    ) AS b NATURAL JOIN customer AS c
+    GROUP BY c.cust_no
+)
+
+SELECT b.cust_no, b.name
+FROM(
+    SELECT MAX(customer_total_price.total_price) AS total_price
+    FROM customer_total_price
+) AS a NATURAL JOIN customer_total_price AS b;
 
 --Query 2
 
