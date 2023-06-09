@@ -27,7 +27,7 @@ values  ('BAN-12345','Banana',                'Bananas from Madeira 1kg',       
         ('WAB-12312','Wagyu Beef',            'Premium gourmet japanese beef',                126.85,1279312789);
 
 insert into contains
-values  (1, 'OIL-86420', NULL),
+values  (1, 'OIL-86420', 4),
         (2, 'RIC-24680', 16),
         (3, 'BW-13579',  7),
         (3, 'RIC-24680', 1),
