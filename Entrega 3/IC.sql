@@ -32,7 +32,7 @@ CREATE OR REPLACE FUNCTION check_mandatory_order_participation()
     RETURNS TRIGGER AS
 $$
     BEGIN
-        IF NEW.order_no NOT IN (SELECT order_no FROM contains) THEN
+        IF NEW.order_no NOT IN (SELECT order_no FROM contains) OR NEW.order_no IN (SELECT order_no FROM contains WHERE contains.qty = NULL OR contains.qty = 0 ) THEN
             RAISE EXCEPTION 'Order "%" must contain at least one product', NEW.order_no;
         END IF;
         RETURN NEW;
