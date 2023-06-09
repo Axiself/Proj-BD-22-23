@@ -23,7 +23,7 @@ $$
     END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER mandatory_workplace_exclusive_specialisation
+CREATE CONSTRAINT TRIGGER mandatory_workplace_exclusive_specialisation
 AFTER INSERT OR UPDATE ON workplace DEFERRABLE
 FOR EACH ROW EXECUTE PROCEDURE check_mandatory_exclusive_workplace_specialisation();
 
@@ -39,6 +39,6 @@ $$
     END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER mandatory_order_participation 
+CREATE CONSTRAINT TRIGGER mandatory_order_participation 
 AFTER INSERT OR UPDATE ON orders DEFERRABLE
 FOR EACH ROW EXECUTE PROCEDURE check_mandatory_order_participation();
