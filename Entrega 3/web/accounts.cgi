@@ -23,7 +23,7 @@ try:
 	for row in result:
 		print('<tr>')
 		for value in row:
-		# The string has the {}, the variables inside format() will replace the {}
+			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
 		print('<td><a href="balance.cgi?account_number={}">Change balance</a></td>'.format(row[0]))
 		print('</tr>')
