@@ -1,32 +1,18 @@
-import psycopg2
-import login
+#!/usr/bin/python3
 
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
 print('<title>Index</title>')
+print('<link rel="stylesheet" href="styles.css">')
 print('</head>')
 print('<body>')
+print('<div id="id1">')
 print('<h1>Insert title here</h1>')
-
-connection = None
-try:
-	# Creating connection
-	connection = psycopg2.connect(login.credentials)
-	cursor = connection.cursor()
-	# Making index menu
-	print('<form action="balance.cgi">')
-	print('<input type="submit" value="Balance"/>')
-	print('</form>')
-	# Closing connection
-	cursor.close()
-except Exception as e:
-	# Print errors on the webpage if they occur
-	print('<h1>An error occurred.</h1>')
-	print('<p>{}</p>'.format(e))
-finally:
-	if connection is not None:
-		connection.close()
-
+print('<form action="balance.cgi">')
+print('<p>New balance: <input type="text" name="balance"/></p>')
+print('<input type="submit" value="Balance"/>')
+print('</form>')
+print('</div>')
 print('</body>')
 print('</html>')
