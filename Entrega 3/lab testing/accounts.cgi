@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import psycopg2
 import login
+
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
