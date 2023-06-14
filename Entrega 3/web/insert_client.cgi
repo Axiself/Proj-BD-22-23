@@ -24,8 +24,8 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to index
-    print('<a href="clients.cgi"><span class="material-icons">')
+    # Go back to clients
+    print('<a href="clients.cgi" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
 
@@ -42,6 +42,7 @@ except Exception as e:
 	# Print errors on the webpage if they occur
     print('<h1>An error occurred.</h1>')
     print('<p>{}</p>'.format(e))
+    connection.rollback()
 finally:
     if connection is not None:
 	    connection.close()

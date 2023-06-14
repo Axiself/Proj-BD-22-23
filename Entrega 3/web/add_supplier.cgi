@@ -19,7 +19,7 @@ try:
     cursor = connection.cursor()
 
     # Go back to index
-    print('<a href="suppliers.cgi"><span class="material-icons">')
+    print('<a href="suppliers.cgi" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
     
@@ -34,14 +34,16 @@ try:
 
     # Creating the form
     print('<form action="insert_supplier.cgi" method="post">')
-    print('<p>TIN: <input type="text" name="tin"/></p>')
-    print('<p>Supplier name: <input type="text" name="name"/></p>')
-    print('<p>Address: <input type="text" name="address"/></p>')
-    print('<p>SKU: <select name="sku">')
+    print('<div class="form-field>')
+    print('<p>TIN: </p><input type="text" name="tin"/>')
+    print('<p>Supplier name: </p><input type="text" name="name"/>')
+    print('<p>Address: </p><input type="text" name="address"/>')
+    print('<p>SKU: </p><select name="sku">')
     for row in result:
         print('<option value="{}">{}, {}</option>'.format(row[0], row[0], row[1]))
     print('</select></p>')
-    print('<p>Date: <input type="date" name="date"/></p>')
+    print('<p>Date: </p><input type="date" name="date"/>')
+    print('</div>')
     print('<p><input type="submit" value="Create product-supplier pair"/></p>')
     print('</form>')
     

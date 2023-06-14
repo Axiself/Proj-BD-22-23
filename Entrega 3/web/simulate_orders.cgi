@@ -18,13 +18,19 @@ try:
 
 
 	# Go back to index
-	print('<a href="index.cgi"><span class="material-icons">')
+	print('<a href="index.cgi" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
 
-	print('<h1>Non Payed Orders</h1>')
+	print('<h1>Unpayed Orders</h1>')
 	# Making query
-	sql='SELECT * FROM orders WHERE order_no NOT IN (SELECT order_no FROM pay)'
+	sql="""SELECT a.order_no, b.cust_no, b.name, total_price, date
+		FROM(
+    		SELECT order_no, SUM(price*qty) as total_price
+    		FROM product NATURAL JOIN contains
+    		GROUP BY order_no
+		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
+		WHERE order_no NOT IN (SELECT order_no FROM pay)"""
 	cursor.execute(sql)
 	result = cursor.fetchall()
 
@@ -33,6 +39,8 @@ try:
 	print('<tr>')
 	print('<th>Order number</th>')
 	print('<th>Customer number</th>')
+	print('<th>Customer name</th>')
+	print('<th>Total Price</th>')
 	print('<th>Date</th>')
 	print('</tr>')
 	for row in result:
@@ -40,7 +48,7 @@ try:
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
-		print('<td><a href="pay_order.cgi?order_no={}&cust_no={}">Pay</a></td>'.format(row[0], row[1]))
+		print('<td><div class="center-content"><a href="pay_order.cgi?order_no={}&cust_no={}"><span class="material-icons">sell</span></a></div></td>'.format(row[0], row[1]))
 		print('</tr>')
 	print('</table>')
 
@@ -51,6 +59,7 @@ except Exception as e:
 	# Print errors on the webpage if they occur
 	print('<h1>An error occurred.</h1>')
 	print('<p>{}</p>'.format(e))
+	connection.rollback()
 
 finally:
 	if connection is not None:

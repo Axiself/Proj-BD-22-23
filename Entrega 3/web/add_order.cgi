@@ -18,8 +18,8 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to index
-    print('<a href="orders.cgi"><span class="material-icons">')
+    # Go back to orders
+    print('<a href="orders.cgi" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
     
@@ -37,14 +37,16 @@ try:
 
     # The form will send the info needed for the SQL query
     print('<form action="insert_order.cgi" method="post">')
+    print('<div class="form-field>')
     print('<p><input type="hidden" name="order_no" value="{}"/></p>'.format(order_no))
-    print('<p>Customer: <select name="cust_no">')
+    print('<p>Customer: </p><select name="cust_no">')
     for row in result1:
         print('<option value="{}">{}, {}</option>'.format(row[0], row[0], row[1]))
-    print('</select></p>')
-    print('<p>Date: <input type="date" name="date"/></p>')
+    print('</select>')
+    print('<p>Date: </p><input type="date" name="date"/>')
     for row in result2:
-        print('<p>{} quantity: <input type="text" name="{}"/></p>'.format(row[0], row[0]))
+        print('<p>{} quantity: </p><input type="text" name="{}"/>'.format(row[0], row[0]))
+    print('</div>')
     print('<p><input type="submit" value="Create order"/></p>')
     print('</form>')
     
@@ -54,6 +56,7 @@ except Exception as e:
 	# Print errors on the webpage if they occur
     print('<h1>An error occurred.</h1>')
     print('<p>{}</p>'.format(e))
+    connection.rollback()
 finally:
     if connection is not None:
 	    connection.close()

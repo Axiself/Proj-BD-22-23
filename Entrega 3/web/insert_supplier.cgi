@@ -24,15 +24,15 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to index
-    print('<a href="suppliers.cgi"><span class="material-icons">')
+    # Go back to suppliers
+    print('<a href="suppliers.cgi" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
 
     # Making query
     sql = 'INSERT INTO supplier VALUES (%s, %s, %s, %s, %s);'
     data = (TIN, name, address, sku, date)
-    print('<p>Order and product added successfuly</p>')
+    print('<p>Supplier and product added successfuly</p>')
     cursor.execute(sql, data)
     connection.commit()
 
@@ -42,6 +42,7 @@ except Exception as e:
 	# Print errors on the webpage if they occur
     print('<h1>An error occurred.</h1>')
     print('<p>{}</p>'.format(e))
+    connection.rollback()
 finally:
     if connection is not None:
 	    connection.close()

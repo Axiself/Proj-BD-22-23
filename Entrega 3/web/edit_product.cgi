@@ -13,18 +13,20 @@ print('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=
 print('</head>')
 print('<body>')
 
-# Go back to index
-print('<a href="products.cgi"><span class="material-icons">')
+# Go back to products
+print('<a href="products.cgi" class="arrow"><span class="material-icons">')
 print('arrow_back')
 print('</span></a>')
 
 # Creating the form
 print('<h3>Edit product "{}"</h3>'.format(sku))
 print('<form action="update_product.cgi" method="post">')
-print('<p><input type="hidden" name="sku" value="{}"/></p>'.format(sku))
-print('<p>Description: <input type="text" name="description"/></p>')
-print('<p>Price: <input type="text" name="price"/></p>')
-print('<p><input type="submit" value="Update product"/></p>')
+print('<div class="form-field>')
+print('<input type="hidden" name="sku" value="{}"/>'.format(sku))
+print('<p>Description: </p><input type="text" name="description"/>')
+print('<p>Price: </p><input type="text" name="price"/>')
+print('</div>')
+print('<input type="submit" value="Update product"/>')
 print('</form>')
 
 print('</body>')
