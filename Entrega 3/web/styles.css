@@ -46,7 +46,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  width: 100%;
+  width: 300px;
 }
 
 input[type="submit"]:hover,
