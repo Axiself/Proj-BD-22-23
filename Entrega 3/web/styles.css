@@ -1,5 +1,5 @@
 
-body{
+body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -10,7 +10,15 @@ form {
 	margin: 1em;
 }
 
-.container{
+table {
+    margin: 1em;
+    border-style: solid;
+    border-color: black;
+    border: 5px;
+    padding: 20px;
+}
+
+.container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -39,7 +47,7 @@ form {
 	background-color: #2fb12f;
 }
 
-#id1{
+#id1 {
     display: flex;
     justify-content: center;
     align-items: center;

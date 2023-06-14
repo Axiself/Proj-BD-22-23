@@ -4,12 +4,12 @@ import login
 form = cgi.FieldStorage()
 
 #getvalue uses the names from the form in previous page
-sku = form.getvalue('sku')
+TIN = form.getvalue('tin')
 
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
-print('<title>Delete product</title>')
+print('<title>Delete supplier</title>')
 print('<link rel="stylesheet" href="styles.css">')
 print('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">')
 print('</head>')
@@ -17,25 +17,26 @@ print('<body>')
 connection = None
 try:
 	# Go back
-	print('<a href="products.cgi"><span class="material-icons">')
+	print('<a href="suppliers.cgi"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
+	
 	# Creating connection
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
+	
 	# Making query
 	sql = """
-        DELETE FROM delivery WHERE TIN IN (SELECT TIN FROM supplier WHERE sku = %s);
-	    DELETE FROM supplier WHERE sku = %s;
-	    DELETE FROM contains WHERE sku = %s;
-	    DELETE FROM product WHERE sku = %s;"""
-	data = (sku, sku, sku, sku)
+        DELETE FROM delivery WHERE TIN = %s;
+        DELETE FROM supplier WHERE TIN = %s;"""
+	data = (TIN, TIN)
 	# The string has the {}, the variables inside format() will replace the {}
-	print('<p>Product "{}" and its supplier(s) deleted.</p>'.format(sku))
+	print('<p>Supplier "{}" deleted.</p>'.format(TIN))
 	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
 	# Commit the update (without this step the database will not change)
 	connection.commit()
+	
 	# Closing connection
 	cursor.close()
 except Exception as e:

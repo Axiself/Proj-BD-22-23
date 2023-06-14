@@ -4,12 +4,12 @@ import login
 form = cgi.FieldStorage()
 
 #getvalue uses the names from the form in previous page
-sku = form.getvalue('sku')
+cust_no = form.getvalue('cust_no')
 
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
-print('<title>Delete product</title>')
+print('<title>Delete customer</title>')
 print('<link rel="stylesheet" href="styles.css">')
 print('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">')
 print('</head>')
@@ -17,7 +17,7 @@ print('<body>')
 connection = None
 try:
 	# Go back
-	print('<a href="products.cgi"><span class="material-icons">')
+	print('<a href="clients.cgi"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
 	# Creating connection
@@ -25,13 +25,14 @@ try:
 	cursor = connection.cursor()
 	# Making query
 	sql = """
-        DELETE FROM delivery WHERE TIN IN (SELECT TIN FROM supplier WHERE sku = %s);
-	    DELETE FROM supplier WHERE sku = %s;
-	    DELETE FROM contains WHERE sku = %s;
-	    DELETE FROM product WHERE sku = %s;"""
-	data = (sku, sku, sku, sku)
+	    DELETE FROM process WHERE order_no IN (SELECT order_no FROM orders WHERE cust_no = %s);
+	    DELETE FROM contains WHERE order_no IN (SELECT order_no FROM orders WHERE cust_no = %s);
+        DELETE FROM pay WHERE cust_no = %s;
+	    DELETE FROM orders WHERE cust_no = %s;
+        DELETE FROM customer WHERE cust_no = %s;"""
+	data = (cust_no, cust_no, cust_no, cust_no, cust_no)
 	# The string has the {}, the variables inside format() will replace the {}
-	print('<p>Product "{}" and its supplier(s) deleted.</p>'.format(sku))
+	print('<p>Client "{}" deleted.</p>'.format(cust_no))
 	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
 	# Commit the update (without this step the database will not change)

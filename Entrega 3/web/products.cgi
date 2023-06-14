@@ -5,47 +5,51 @@ import login
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
-print('<title>Make an order</title>')
+print('<title>Update products and/or suppliers</title>')
 print('<link rel="stylesheet" href="styles.css">')
 print('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">')
 print('</head>')
 print('<body>')
+
 connection = None
 try:
 	# Creating connection
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
+
 	# Go back to index
 	print('<a href="index.cgi"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
-	# Making query
-	sql= 'SELECT * FROM orders'
+
+	# Getting all products
+	sql= 'SELECT * FROM product'
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	num = len(result)
-	max_orders = -1
-	# Displaying orders
+
+	# Displaying products
 	print('<table border="3" cellspacing="5">')
 	print('<tr>')
-	print('<th>Order Number</th>')
-	print('<th>Customer Number</th>')
-	print('<th>Date</th>')
+	print('<th>SKU</th>')
+	print('<th>Product name</th>')
+	print('<th>Description</th>')
+	print('<th>Price</th>')
+	print('<th>EAN</th>')
 	print('</tr>')
 	for row in result:
-		if(max_orders <= row[0]):
-			max_orders = row[0]+1
 		print('<tr>')
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
+		print('<td><a href="edit_product.cgi?sku={}">Edit</a></td>'.format(row[0]))
+		print('<td><a href="delete_product.cgi?sku={}">Remove</a></td>'.format(row[0]))
 		print('</tr>')
 	print('</table>')
+	print('<a href="add_product-supplier.cgi">Add product</a>')
 
-	print('<td><a href="add_order.cgi?order_no={}">Add Order</a></td>'.format(max_orders))
     # Closing connection
 	cursor.close()
-
 except Exception as e:
 	# Print errors on the webpage if they occur
 	print('<h1>An error occurred.</h1>')
@@ -53,5 +57,6 @@ except Exception as e:
 finally:
 	if connection is not None:
 		connection.close()
+
 print('</body>')
 print('</html>')
