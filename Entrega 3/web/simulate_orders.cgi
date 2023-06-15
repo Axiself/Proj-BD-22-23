@@ -36,9 +36,10 @@ try:
 		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
 		WHERE order_no NOT IN (SELECT order_no FROM pay)
 		LIMIT %s OFFSET %s;"""
-	data = (page_size, (page-1)*page_size)
+	data = (page_size+1, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
+	size = len(result)
 
 	# Display orders to be payed
 	print('<table border="3" cellspacing="5">')
@@ -49,7 +50,7 @@ try:
 	print('<th>Total Price</th>')
 	print('<th>Date</th>')
 	print('</tr>')
-	for row in result:
+	for row in result[:page_size]:
 		print('<tr>')
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
@@ -70,19 +71,7 @@ try:
 	print('<h3 style="margin: 10px; margin-top: 16px">Page {}</h3>'.format(page))
 
 	# Next page
-	sql="""SELECT a.order_no, b.cust_no, b.name, total_price, date
-		FROM(
-    		SELECT order_no, SUM(price*qty) as total_price
-    		FROM product NATURAL JOIN contains
-    		GROUP BY order_no
-		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
-		WHERE order_no NOT IN (SELECT order_no FROM pay)
-		LIMIT %s OFFSET %s;"""
-	data = (page_size, page*page_size)
-	cursor.execute(sql)
-	result = cursor.fetchall()
-	size = len(result)
-	if(size != 0):
+	if(size == page_size+1):
 		print('<a href="simulate_orders.cgi?page={}" class="page-arrow"><span class="material-icons">'.format(page+1))
 		print('arrow_forward')
 		print('</span></a>')

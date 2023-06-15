@@ -28,10 +28,10 @@ try:
 
 	# Getting all products
 	sql= 'SELECT * FROM product LIMIT %s OFFSET %s'
-	data = (page_size, (page-1)*page_size)
+	data = (page_size+1, (page-1)*page_size)
 	cursor.execute(sql, data)
 	result = cursor.fetchall()
-	num = len(result)
+	size = len(result)
 
 	# Displaying products
 	print('<table border="3" cellspacing="5">')
@@ -42,7 +42,7 @@ try:
 	print('<th>Price</th>')
 	print('<th>EAN</th>')
 	print('</tr>')
-	for row in result:
+	for row in result[:page_size]:
 		print('<tr>')
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
@@ -66,12 +66,7 @@ try:
 	print('<h3 style="margin: 10px; margin-top: 16px">Page {}</h3>'.format(page))
 
 	# Next page
-	sql = 'SELECT sku FROM product LIMIT %s OFFSET %s'
-	data = (page_size, page*page_size)
-	cursor.execute(sql)
-	result = cursor.fetchall()
-	size = len(result)
-	if(size != 0):
+	if(size == page_size+1):
 		print('<a href="products.cgi?page={}" class="page-arrow"><span class="material-icons">'.format(page+1))
 		print('arrow_forward')
 		print('</span></a>')
