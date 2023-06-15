@@ -53,7 +53,7 @@ try:
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
-		print('<td><div class="center-content"><a href="delete_customer.cgi?cust_no={}"><span class="material-icons">delete</span></a></div></td>'.format(row[0]))
+		print('<td><div class="center-content"><a href="delete_client.cgi?cust_no={}"><span class="material-icons">delete</span></a></div></td>'.format(row[0]))
 		print('</tr>')
 	print('</table>')
 

@@ -32,7 +32,7 @@ try:
         DELETE FROM customer WHERE cust_no = %s;"""
 	data = (cust_no, cust_no, cust_no, cust_no, cust_no)
 	# The string has the {}, the variables inside format() will replace the {}
-	print('<p>Client "{}" deleted.</p>'.format(cust_no))
+	print('<p>Customer "{}" deleted.</p>'.format(cust_no))
 	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
 	# Commit the update (without this step the database will not change)
