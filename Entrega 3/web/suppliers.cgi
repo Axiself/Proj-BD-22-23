@@ -27,7 +27,8 @@ try:
 	print('</span></a>')
 
     # Getting all suppliers
-	sql= 'SELECT * FROM supplier LIMIT {} OFFSET {}'.format(page_size, (page-1)*page_size)
+	sql= 'SELECT * FROM supplier LIMIT %s OFFSET %s'
+	data = (page_size, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	num = len(result)
@@ -63,7 +64,8 @@ try:
 	print('<h3 style="margin: 10px; margin-top: 16px">Page {}</h3>'.format(page))
 
 	# Next page
-	sql = 'SELECT TIN FROM supplier LIMIT {} OFFSET {}'.format(page_size, page*page_size)
+	sql = 'SELECT TIN FROM supplier LIMIT %s OFFSET %s'
+	data = (page_size, page*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	size = len(result)

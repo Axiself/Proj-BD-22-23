@@ -27,8 +27,9 @@ try:
 	print('</span></a>')
 
 	# Getting all products
-	sql= 'SELECT * FROM product LIMIT {} OFFSET {}'.format(page_size, (page-1)*page_size)
-	cursor.execute(sql)
+	sql= 'SELECT * FROM product LIMIT %s OFFSET %s'
+	data = (page_size, (page-1)*page_size)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	num = len(result)
 
@@ -65,7 +66,8 @@ try:
 	print('<h3 style="margin: 10px; margin-top: 16px">Page {}</h3>'.format(page))
 
 	# Next page
-	sql = 'SELECT sku FROM product LIMIT {} OFFSET {}'.format(page_size, page*page_size)
+	sql = 'SELECT sku FROM product LIMIT %s OFFSET %s'
+	data = (page_size, page*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	size = len(result)

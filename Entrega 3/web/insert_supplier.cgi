@@ -32,7 +32,7 @@ try:
     # Making query
     sql = 'INSERT INTO supplier VALUES (%s, %s, %s, %s, %s);'
     data = (TIN, name, address, sku, date)
-    print('<p>Supplier and product added successfuly</p>')
+    print('<p>Supplier added successfuly</p>')
     cursor.execute(sql, data)
     connection.commit()
 

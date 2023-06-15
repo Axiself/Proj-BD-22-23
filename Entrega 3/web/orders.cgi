@@ -42,8 +42,9 @@ try:
     		FROM product NATURAL JOIN contains
     		GROUP BY order_no
 		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
-		LIMIT {} OFFSET {};""".format(page_size, (page-1)*page_size)
-	cursor.execute(sql)
+		LIMIT %s OFFSET %s;"""
+	data = (page_size, (page-1)*page_size)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	
 	# Displaying orders
@@ -84,8 +85,9 @@ try:
     		FROM product NATURAL JOIN contains
     		GROUP BY order_no
 		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
-		LIMIT {} OFFSET {};""".format(page_size, page*page_size)
-	cursor.execute(sql)
+		LIMIT %s OFFSET %s;"""
+	data = (page_size, page*page_size)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	size = len(result)
 	if(size != 0):

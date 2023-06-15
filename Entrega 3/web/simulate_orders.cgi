@@ -35,7 +35,8 @@ try:
     		GROUP BY order_no
 		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
 		WHERE order_no NOT IN (SELECT order_no FROM pay)
-		LIMIT {} OFFSET {};""".format(page_size, (page-1)*page_size)
+		LIMIT %s OFFSET %s;"""
+	data = (page_size, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 
@@ -76,7 +77,8 @@ try:
     		GROUP BY order_no
 		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
 		WHERE order_no NOT IN (SELECT order_no FROM pay)
-		LIMIT {} OFFSET {};""".format(page_size, page*page_size)
+		LIMIT %s OFFSET %s;"""
+	data = (page_size, page*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	size = len(result)

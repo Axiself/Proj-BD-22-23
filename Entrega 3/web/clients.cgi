@@ -35,8 +35,9 @@ try:
 				max = row[0]+1
 
 	# Making query
-	sql = 'SELECT * FROM customer LIMIT {} OFFSET {}'.format(page_size, (page-1)*page_size)
-	cursor.execute(sql)
+	sql = 'SELECT * FROM customer LIMIT %s OFFSET %s'
+	data = (page_size, (page-1)*page_size)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	
 	# Displaying customers
@@ -71,8 +72,9 @@ try:
 	print('<h3 style="margin: 10px; margin-top: 16px">Page {}</h3>'.format(page))
 
 	# Next page
-	sql = 'SELECT cust_no FROM customer LIMIT {} OFFSET {}'.format(page_size, page*page_size)
-	cursor.execute(sql)
+	sql = 'SELECT cust_no FROM customer LIMIT %s OFFSET %s'
+	data = (page_size, page*page_size)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	size = len(result)
 	if(size != 0):
