@@ -74,7 +74,14 @@ try:
 		print('</span></a>')
 
 	# Next page
-	sql = 'SELECT order_no FROM orders LIMIT {} OFFSET {}'.format(page_size, page*page_size)
+	sql= """
+		SELECT a.order_no
+		FROM(
+    		SELECT order_no, SUM(price*qty) as total_price
+    		FROM product NATURAL JOIN contains
+    		GROUP BY order_no
+		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
+		LIMIT {} OFFSET {};""".format(page_size, page*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	size = len(result)
