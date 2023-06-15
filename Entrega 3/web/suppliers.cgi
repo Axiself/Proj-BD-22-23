@@ -29,7 +29,7 @@ try:
     # Getting all suppliers
 	sql= 'SELECT * FROM supplier LIMIT %s OFFSET %s'
 	data = (page_size+1, (page-1)*page_size)
-	cursor.execute(sql)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	size = len(result)
 

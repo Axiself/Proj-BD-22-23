@@ -37,7 +37,7 @@ try:
 		WHERE order_no NOT IN (SELECT order_no FROM pay)
 		LIMIT %s OFFSET %s;"""
 	data = (page_size+1, (page-1)*page_size)
-	cursor.execute(sql)
+	cursor.execute(sql, data)
 	result = cursor.fetchall()
 	size = len(result)
 
