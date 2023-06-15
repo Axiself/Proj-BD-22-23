@@ -21,7 +21,7 @@ print('</span></a>')
 # Creating the form
 print('<h3>Edit product "{}"</h3>'.format(sku))
 print('<form action="update_product.cgi" method="post">')
-print('<div class="form-field>')
+print('<div class="form-field">')
 print('<input type="hidden" name="sku" value="{}"/>'.format(sku))
 print('<p>Description: </p><input type="text" name="description"/>')
 print('<p>Price: </p><input type="text" name="price"/>')

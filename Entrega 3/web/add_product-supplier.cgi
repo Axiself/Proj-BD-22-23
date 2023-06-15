@@ -21,7 +21,7 @@ print('<h3>Create product-supplier pair</h3>')
 # Creating the form
 print('<form action="insert_product-supplier.cgi" method="post">')
 # Product form
-print('<div class="form-field>')
+print('<div class="form-field">')
 print('<h4>Product form:</h4>')
 print('<p>SKU: </p><input type="text" name="sku"/>')
 print('<p>Product name: </p><input type="text" name="p_name"/>')

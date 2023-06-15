@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import psycopg2
-import login
+import login, cgi
+form = cgi.FieldStorage()
+
+page = int(form.getvalue("page"))
+page_size = 10
 
 print('Content-type:text/html\n\n')
 print('<html>')
@@ -30,7 +34,8 @@ try:
     		FROM product NATURAL JOIN contains
     		GROUP BY order_no
 		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
-		WHERE order_no NOT IN (SELECT order_no FROM pay)"""
+		WHERE order_no NOT IN (SELECT order_no FROM pay)
+		LIMIT {} OFFSET {};""".format(page_size, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 
@@ -51,6 +56,33 @@ try:
 		print('<td><div class="center-content"><a href="pay_order.cgi?order_no={}&cust_no={}"><span class="material-icons">sell</span></a></div></td>'.format(row[0], row[1]))
 		print('</tr>')
 	print('</table>')
+
+	print('<div style="display: flex; justify-content: flex-end;">')
+	print('<div class="pagination">')
+	# Prev page
+	if(page > 1):
+		print('<a href="simulate_orders.cgi?page={}" class="arrow"><span class="material-icons">'.format(page-1))
+		print('arrow_back')
+		print('</span></a>')
+
+	# Next page
+	sql="""SELECT a.order_no, b.cust_no, b.name, total_price, date
+		FROM(
+    		SELECT order_no, SUM(price*qty) as total_price
+    		FROM product NATURAL JOIN contains
+    		GROUP BY order_no
+		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
+		WHERE order_no NOT IN (SELECT order_no FROM pay)
+		LIMIT {} OFFSET {};""".format(page_size, page*page_size)
+	cursor.execute(sql)
+	result = cursor.fetchall()
+	size = len(result)
+	if(size != 0):
+		print('<a href="simulate_orders.cgi?page={}" class="arrow"><span class="material-icons">'.format(page+1))
+		print('arrow_forward')
+		print('</span></a>')
+	print('</div>')
+	print('</div>')
 
     # Closing connection
 	cursor.close()

@@ -25,7 +25,7 @@ try:
     cursor = connection.cursor()
 
     # Go back to clients
-    print('<a href="clients.cgi" class="arrow"><span class="material-icons">')
+    print('<a href="clients.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
 

@@ -154,6 +154,8 @@ td:hover::after {
 .arrow {
   padding: 7.5px;
   width: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .button:hover,
@@ -163,4 +165,13 @@ td:hover::after {
 
 .arrow span {
   display: block;
+}
+
+.pagination {
+  display: flex;
+}
+
+.page-bottom {
+  display: flex;
+  justify-content: space-between;
 }

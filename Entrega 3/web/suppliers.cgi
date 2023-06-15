@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-
 import psycopg2
-import login
+import login, cgi
+form = cgi.FieldStorage()
+
+page = int(form.getvalue("page"))
+page_size = 10
 
 print('Content-type:text/html\n\n')
 print('<html>')
@@ -23,13 +26,8 @@ try:
 	print('arrow_back')
 	print('</span></a>')
 
-	# Getting all products
-	sql= 'SELECT * FROM product'
-	cursor.execute(sql)
-	result = cursor.fetchall()
-	num = len(result)
     # Getting all suppliers
-	sql= 'SELECT * FROM supplier'
+	sql= 'SELECT * FROM supplier LIMIT {} OFFSET {}'.format(page_size, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	num = len(result)
@@ -47,10 +45,31 @@ try:
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
-		print('<td><div class="center-content"><a href="delete_supplier.cgi?TIN={}"><span class="material-icons">delete</span></a></div></td>'.format(row[0]))
+		print('<td><div class="center-content"><a href="delete_supplier.cgi?tin={}"><span class="material-icons">delete</span></a></div></td>'.format(row[0]))
 		print('</tr>')
 	print('</table>')
+
+	print('<div class="page-bottom">')
 	print('<a href="add_supplier.cgi" class="button"><span class="material-icons">add</span>Add supplier</a>')
+
+	print('<div class="pagination">')
+	# Prev page
+	if(page > 1):
+		print('<a href="suppliers.cgi?page={}" class="arrow"><span class="material-icons">'.format(page-1))
+		print('arrow_back')
+		print('</span></a>')
+
+	# Next page
+	sql = 'SELECT TIN FROM supplier LIMIT {} OFFSET {}'.format(page_size, page*page_size)
+	cursor.execute(sql)
+	result = cursor.fetchall()
+	size = len(result)
+	if(size != 0):
+		print('<a href="suppliers.cgi?page={}" class="arrow"><span class="material-icons">'.format(page+1))
+		print('arrow_forward')
+		print('</span></a>')
+	print('</div>')
+	print('</div>')
 	
     # Closing connection
 	cursor.close()

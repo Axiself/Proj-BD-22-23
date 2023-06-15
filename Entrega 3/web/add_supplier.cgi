@@ -27,14 +27,14 @@ try:
     print('<h3>Create supplier</h3>')
 
     # Creating query to get all products
-    sql = 'SELECT * FROM product;'
+    sql = 'SELECT sku, name FROM product;'
     cursor.execute(sql)
     result = cursor.fetchall()
     len = len(result)
 
     # Creating the form
     print('<form action="insert_supplier.cgi" method="post">')
-    print('<div class="form-field>')
+    print('<div class="form-field">')
     print('<p>TIN: </p><input type="text" name="tin"/>')
     print('<p>Supplier name: </p><input type="text" name="name"/>')
     print('<p>Address: </p><input type="text" name="address"/>')

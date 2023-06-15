@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import psycopg2
-import login
+import login, cgi
+form = cgi.FieldStorage()
+
+page = int(form.getvalue("page"))
+page_size = 10
 
 print('Content-type:text/html\n\n')
 print('<html>')
@@ -15,10 +19,21 @@ try:
 	# Creating connection
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
+
 	# Go back to index
 	print('<a href="index.cgi" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
+
+	# Getting the next order_no
+	sql = 'SELECT order_no FROM orders'
+	cursor.execute(sql)
+	result = cursor.fetchall()
+	max = -1
+	for row in result:
+		if(max <= row[0]):
+				max = row[0]+1
+
 	# Making query
 	sql= """
 		SELECT a.order_no, b.cust_no, b.name, total_price, date
@@ -26,12 +41,11 @@ try:
     		SELECT order_no, SUM(price*qty) as total_price
     		FROM product NATURAL JOIN contains
     		GROUP BY order_no
-		) as a NATURAL JOIN orders NATURAL JOIN customer AS b;"""
-	
+		) as a NATURAL JOIN orders NATURAL JOIN customer AS b
+		LIMIT {} OFFSET {};""".format(page_size, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
-	num = len(result)
-	max_orders = -1
+	
 	# Displaying orders
 	print('<table border="3" cellspacing="5">')
 	print('<tr>')
@@ -42,8 +56,6 @@ try:
 	print('<th>Date</th>')
 	print('</tr>')
 	for row in result:
-		if(max_orders <= row[0]):
-			max_orders = row[0]+1
 		print('<tr>')
 		for value in row:
 			# The string has the {}, the variables inside format() will replace the {}
@@ -51,7 +63,28 @@ try:
 		print('</tr>')
 	print('</table>')
 
-	print('<td><a href="add_order.cgi?order_no={}" class="button"><span class="material-icons">add</span>Add Order</a></td>'.format(max_orders))
+	print('<div class="page-bottom">')
+	print('<td><a href="add_order.cgi?order_no={}" class="button"><span class="material-icons">add</span>Add Order</a></td>'.format(max))
+
+	print('<div class="pagination">')
+	# Prev page
+	if(page > 1):
+		print('<a href="orders.cgi?page={}" class="arrow"><span class="material-icons">'.format(page-1))
+		print('arrow_back')
+		print('</span></a>')
+
+	# Next page
+	sql = 'SELECT order_no FROM orders LIMIT {} OFFSET {}'.format(page_size, page*page_size)
+	cursor.execute(sql)
+	result = cursor.fetchall()
+	size = len(result)
+	if(size != 0):
+		print('<a href="orders.cgi?page={}" class="arrow"><span class="material-icons">'.format(page+1))
+		print('arrow_forward')
+		print('</span></a>')
+	print('</div>')
+	print('</div>')
+
     # Closing connection
 	cursor.close()
 

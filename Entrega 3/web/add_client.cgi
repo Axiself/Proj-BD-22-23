@@ -18,7 +18,7 @@ print('</span></a>')
 print('<h3>Create client</h3>')
 # The form will send the info needed for the SQL query
 print('<form action="insert_client.cgi" method="post">')
-print('<div class="form-field>')
+print('<div class="form-field">')
 print('<p><input type="hidden" name="cust_no" value="{}"/>'.format(cust_no))
 print('<p>Client name: </p><input type="text" name="name"/>')
 print('<p>Email: </p><input type="text" name="email"/>')

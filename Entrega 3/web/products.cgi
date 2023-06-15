@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import psycopg2
-import login
+import login, cgi
+form = cgi.FieldStorage()
+
+page = int(form.getvalue("page"))
+page_size = 10
 
 print('Content-type:text/html\n\n')
 print('<html>')
@@ -23,7 +27,7 @@ try:
 	print('</span></a>')
 
 	# Getting all products
-	sql= 'SELECT * FROM product'
+	sql= 'SELECT * FROM product LIMIT {} OFFSET {}'.format(page_size, (page-1)*page_size)
 	cursor.execute(sql)
 	result = cursor.fetchall()
 	num = len(result)
@@ -46,7 +50,29 @@ try:
 		print('<td><div class="center-content"><a href="delete_product.cgi?sku={}"><span class="material-icons">delete</span></a></div></td>'.format(row[0]))
 		print('</tr>')
 	print('</table>')
+
+	print('<div class="page-bottom">')
 	print('<a href="add_product-supplier.cgi" class="button"><span class="material-icons">add</span>Add product</a>')
+
+	print('<div class="pagination">')
+	# Prev page
+	if(page > 1):
+		print('<a href="products.cgi?page={}" class="arrow"><span class="material-icons">'.format(page-1))
+		print('arrow_back')
+		print('</span></a>')
+
+	# Next page
+	sql = 'SELECT sku FROM product LIMIT {} OFFSET {}'.format(page_size, page*page_size)
+	cursor.execute(sql)
+	result = cursor.fetchall()
+	size = len(result)
+	if(size != 0):
+		print('<a href="products.cgi?page={}" class="arrow"><span class="material-icons">'.format(page+1))
+		print('arrow_forward')
+		print('</span></a>')
+	print('</div>')
+	print('</div>')
+	
 
     # Closing connection
 	cursor.close()
