@@ -23,7 +23,7 @@ try:
     cursor = connection.cursor()
 
     # Go back to orders
-    print('<a href="orders.cgi" class="arrow"><span class="material-icons">')
+    print('<a href="orders.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
 

@@ -17,7 +17,7 @@ print('<body>')
 connection = None
 try:
 	# Go back to products
-	print('<a href="products.cgi" class="arrow"><span class="material-icons">')
+	print('<a href="products.cgi?page=1" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
 	# Creating connection

@@ -19,7 +19,7 @@ try:
     cursor = connection.cursor()
 
     # Go back to index
-    print('<a href="suppliers.cgi" class="arrow"><span class="material-icons">')
+    print('<a href="suppliers.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
     
