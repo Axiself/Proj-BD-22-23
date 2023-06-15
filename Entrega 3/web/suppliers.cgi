@@ -55,9 +55,12 @@ try:
 	print('<div class="pagination">')
 	# Prev page
 	if(page > 1):
-		print('<a href="suppliers.cgi?page={}" class="arrow"><span class="material-icons">'.format(page-1))
+		print('<a href="suppliers.cgi?page={}" class="page-arrow"><span class="material-icons">'.format(page-1))
 		print('arrow_back')
 		print('</span></a>')
+
+	# Current page
+	print('<h3 style="margin: 10px; margin-top: 16px">Page {}</h3>'.format(page))
 
 	# Next page
 	sql = 'SELECT TIN FROM supplier LIMIT {} OFFSET {}'.format(page_size, page*page_size)
@@ -65,7 +68,7 @@ try:
 	result = cursor.fetchall()
 	size = len(result)
 	if(size != 0):
-		print('<a href="suppliers.cgi?page={}" class="arrow"><span class="material-icons">'.format(page+1))
+		print('<a href="suppliers.cgi?page={}" class="page-arrow"><span class="material-icons">'.format(page+1))
 		print('arrow_forward')
 		print('</span></a>')
 	print('</div>')

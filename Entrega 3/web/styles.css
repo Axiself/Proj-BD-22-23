@@ -137,7 +137,8 @@ td:hover::after {
 
 /* Button style */
 .button,
-.arrow {
+.arrow,
+.page-arrow {
   background-color: #3B8182;
   color: #fff;
   border: none;
@@ -154,12 +155,15 @@ td:hover::after {
 .arrow {
   padding: 7.5px;
   width: 35px;
-  margin-left: 10px;
-  margin-right: 10px;
+}
+
+.page-arrow {
+  padding: 10px;
 }
 
 .button:hover,
-.arrow:hover {
+.arrow:hover,
+.page-arrow:hover {
   background-color: #2b5f60;
 }
 
