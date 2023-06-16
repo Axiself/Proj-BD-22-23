@@ -30,7 +30,7 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to products
+    # Go back to products.cgi
     print('<a href="products.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
@@ -41,9 +41,10 @@ try:
         INSERT INTO supplier VALUES (%s, %s, %s, %s, %s);"""
     data = (sku, p_name, description, price, ean, 
             TIN, s_name, address, sku, date)
-    print('<p>Order and product added successfuly</p>')
+    # Feed the data to the SQL query as follows to avoid SQL injection
     cursor.execute(sql, data)
     connection.commit()
+    print('<p>Order and product added successfuly</p>')
 
     # Closing connection
     cursor.close()

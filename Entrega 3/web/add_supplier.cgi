@@ -18,14 +18,11 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to index
+    # Go back to suppliers.cgi
     print('<a href="suppliers.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
     
-    # The string has the {}, the variables inside format() will replace the {}
-    print('<h3>Create supplier</h3>')
-
     # Creating query to get all products
     sql = 'SELECT sku, name FROM product;'
     cursor.execute(sql)
@@ -33,6 +30,7 @@ try:
     len = len(result)
 
     # Creating the form
+    print('<h3>Create supplier</h3>')
     print('<form action="insert_supplier.cgi" method="post">')
     print('<div class="form-field">')
     print('<p>TIN: </p><input type="text" name="tin"/>')
@@ -44,7 +42,7 @@ try:
     print('</select></p>')
     print('<p>Date: </p><input type="date" name="date"/>')
     print('</div>')
-    print('<p><input type="submit" value="Create product-supplier pair"/></p>')
+    print('<p><input type="submit" value="Create supplier"/></p>')
     print('</form>')
     
     # Redirect to product-supplier pair

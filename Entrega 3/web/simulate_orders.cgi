@@ -20,14 +20,12 @@ try:
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
 
-
-	# Go back to index
+	# Go back to index.cgi
 	print('<a href="index.cgi" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
 
-	print('<h1>Unpayed Orders</h1>')
-	# Making query
+	# Getting all unpaid orders, their clients and total prices
 	sql="""SELECT a.order_no, b.cust_no, b.name, total_price, date
 		FROM(
     		SELECT order_no, SUM(price*qty) as total_price
@@ -42,6 +40,7 @@ try:
 	size = len(result)
 
 	# Display orders to be payed
+	print('<h1>Unpayed Orders</h1>')
 	print('<table border="3" cellspacing="5">')
 	print('<tr>')
 	print('<th>Order number</th>')
@@ -53,7 +52,6 @@ try:
 	for row in result[:page_size]:
 		print('<tr>')
 		for value in row:
-			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
 		print('<td><div class="center-content"><a href="pay_order.cgi?order_no={}&cust_no={}"><span class="material-icons">sell</span></a></div></td>'.format(row[0], row[1]))
 		print('</tr>')

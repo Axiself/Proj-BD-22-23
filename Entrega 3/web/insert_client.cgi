@@ -24,7 +24,7 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to clients
+    # Go back to clients.cgi
     print('<a href="clients.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
@@ -32,9 +32,10 @@ try:
     # Making query
     sql = 'INSERT INTO customer VALUES (%s, %s, %s, %s, %s);'
     data = (cust_no, cust_name, email, phone, address)
-    print('<p>Customer added successfuly</p>')
+    # Feed the data to the SQL query as follows to avoid SQL injection
     cursor.execute(sql, data)
     connection.commit()
+    print('<p>Customer added successfuly</p>')
     
     # Closing connection
     cursor.close()

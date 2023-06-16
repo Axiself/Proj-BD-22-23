@@ -20,7 +20,7 @@ try:
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
 
-	# Go back to index
+	# Go back to index.cgi
 	print('<a href="index.cgi" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
@@ -53,7 +53,6 @@ try:
 	for row in result[:page_size]:
 		print('<tr>')
 		for value in row:
-			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
 		print('<td><div class="center-content"><a href="delete_client.cgi?cust_no={}"><span class="material-icons">delete</span></a></div></td>'.format(row[0]))
 		print('</tr>')

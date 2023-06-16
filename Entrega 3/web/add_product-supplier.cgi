@@ -12,14 +12,15 @@ print('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=
 print('</head>')
 print('<body>')
 
-# Go back to products
+# Go back to products.cgi
 print('<a href="products.cgi?page=1" class="arrow"><span class="material-icons">')
 print('arrow_back')
 print('</span></a>')
 
-print('<h3>Create product-supplier pair</h3>')
 # Creating the form
+print('<h3>Create product-supplier pair</h3>')
 print('<form action="insert_product-supplier.cgi" method="post">')
+
 # Product form
 print('<div class="form-field">')
 print('<h4>Product form:</h4>')

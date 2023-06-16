@@ -16,13 +16,15 @@ print('</head>')
 print('<body>')
 connection = None
 try:
+	# Creating connection
+	connection = psycopg2.connect(login.credentials)
+	cursor = connection.cursor()
+
 	# Go back to products
 	print('<a href="products.cgi?page=1" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
-	# Creating connection
-	connection = psycopg2.connect(login.credentials)
-	cursor = connection.cursor()
+
 	# Making query
 	sql = """
         DELETE FROM delivery WHERE TIN IN (SELECT TIN FROM supplier WHERE sku = %s);
@@ -30,12 +32,12 @@ try:
 	    DELETE FROM contains WHERE sku = %s;
 	    DELETE FROM product WHERE sku = %s;"""
 	data = (sku, sku, sku, sku)
-	# The string has the {}, the variables inside format() will replace the {}
-	print('<p>Product "{}" and its supplier(s) deleted.</p>'.format(sku))
+	
 	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
-	# Commit the update (without this step the database will not change)
 	connection.commit()
+	print('<p>Product "{}" and its supplier(s) deleted.</p>'.format(sku))
+	
 	# Closing connection
 	cursor.close()
 except Exception as e:

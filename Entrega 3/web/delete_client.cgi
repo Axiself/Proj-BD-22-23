@@ -16,13 +16,15 @@ print('</head>')
 print('<body>')
 connection = None
 try:
-	# Go back to clients
-	print('<a href="clients.cgi?page=1" class="arrow"><span class="material-icons">')
-	print('arrow_back')
-	print('</span></a>')
 	# Creating connection
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
+	
+	# Go back to clients.cgi
+	print('<a href="clients.cgi?page=1" class="arrow"><span class="material-icons">')
+	print('arrow_back')
+	print('</span></a>')
+	
 	# Making query
 	sql = """
 	    DELETE FROM process WHERE order_no IN (SELECT order_no FROM orders WHERE cust_no = %s);
@@ -31,12 +33,12 @@ try:
 	    DELETE FROM orders WHERE cust_no = %s;
         DELETE FROM customer WHERE cust_no = %s;"""
 	data = (cust_no, cust_no, cust_no, cust_no, cust_no)
-	# The string has the {}, the variables inside format() will replace the {}
-	print('<p>Customer "{}" deleted.</p>'.format(cust_no))
+	
 	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
-	# Commit the update (without this step the database will not change)
 	connection.commit()
+	print('<p>Customer "{}" deleted.</p>'.format(cust_no))
+	
 	# Closing connection
 	cursor.close()
 except Exception as e:

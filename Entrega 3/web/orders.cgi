@@ -20,7 +20,7 @@ try:
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
 
-	# Go back to index
+	# Go back to index.cgi
 	print('<a href="index.cgi" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
@@ -34,7 +34,7 @@ try:
 		if(max <= row[0]):
 				max = row[0]+1
 
-	# Making query
+	# Getting all orders, their clients and total price
 	sql= """
 		SELECT a.order_no, b.cust_no, b.name, total_price, date
 		FROM(
@@ -60,7 +60,6 @@ try:
 	for row in result[:page_size]:
 		print('<tr>')
 		for value in row:
-			# The string has the {}, the variables inside format() will replace the {}
 			print('<td>{}</td>'.format(value))
 		print('</tr>')
 	print('</table>')

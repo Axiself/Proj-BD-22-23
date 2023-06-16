@@ -16,26 +16,25 @@ print('</head>')
 print('<body>')
 connection = None
 try:
+	# Creating connection
+	connection = psycopg2.connect(login.credentials)
+	cursor = connection.cursor()
+
 	# Go back to suppliers
 	print('<a href="suppliers.cgi?page=1" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')
-	
-	# Creating connection
-	connection = psycopg2.connect(login.credentials)
-	cursor = connection.cursor()
 	
 	# Making query
 	sql = """
         DELETE FROM delivery WHERE TIN = %s;
         DELETE FROM supplier WHERE TIN = %s;"""
 	data = (TIN, TIN)
-	# The string has the {}, the variables inside format() will replace the {}
-	print('<p>Supplier "{}" deleted.</p>'.format(TIN))
+	
 	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
-	# Commit the update (without this step the database will not change)
 	connection.commit()
+	print('<p>Supplier "{}" deleted.</p>'.format(TIN))
 	
 	# Closing connection
 	cursor.close()

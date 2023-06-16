@@ -18,13 +18,10 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to orders
+    # Go back to orders.cgi
     print('<a href="orders.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
-
-    # The string has the {}, the variables inside format() will replace the {}
-    print('<h3>Create order</h3>')
 
     # Making query
     sql1 = 'SELECT cust_no, name FROM customer;'
@@ -35,7 +32,8 @@ try:
     cursor.execute(sql2)
     result2 = cursor.fetchall()
 
-    # The form will send the info needed for the SQL query
+    print('<h3>Create order</h3>')
+    # Creating the form
     print('<form action="insert_order.cgi" method="post">')
     print('<div class="form-field">')
     print('<p><input type="hidden" name="order_no" value="{}"/></p>'.format(order_no))

@@ -22,7 +22,7 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to products
+    # Go back to products.cgi
     print('<a href="products.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')

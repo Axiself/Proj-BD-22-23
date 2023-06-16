@@ -32,9 +32,10 @@ try:
     # Making query
     sql = 'INSERT INTO supplier VALUES (%s, %s, %s, %s, %s);'
     data = (TIN, name, address, sku, date)
-    print('<p>Supplier added successfuly</p>')
+    # Feed the data to the SQL query as follows to avoid SQL injection
     cursor.execute(sql, data)
     connection.commit()
+    print('<p>Supplier added successfuly</p>')
 
     # Closing connection
     cursor.close()

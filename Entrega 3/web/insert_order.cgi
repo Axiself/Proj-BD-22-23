@@ -22,12 +22,12 @@ try:
     connection = psycopg2.connect(login.credentials)
     cursor = connection.cursor()
 
-    # Go back to orders
+    # Go back to orders.cgi
     print('<a href="orders.cgi?page=1" class="arrow"><span class="material-icons">')
     print('arrow_back')
     print('</span></a>')
 
-    # Making query
+    # Making base query
     sql = """
         START TRANSACTION;
         SET CONSTRAINTS ALL DEFERRED;
@@ -46,10 +46,12 @@ try:
             sql += 'INSERT INTO contains VALUES (%s, %s, %s);'
     sql += 'COMMIT;'
 
+    # Convert temp to tuple
     data = tuple(temp)
-    print('<p>Order added successfuly</p>')
+    # Feed the data to the SQL query as follows to avoid SQL injection
     cursor.execute(sql, data)
     connection.commit()
+    print('<p>Order added successfuly</p>')
 
     # Closing connection
     cursor.close()

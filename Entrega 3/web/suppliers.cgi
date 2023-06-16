@@ -21,7 +21,7 @@ try:
 	connection = psycopg2.connect(login.credentials)
 	cursor = connection.cursor()
 
-	# Go back to index
+	# Go back to index.cgi
 	print('<a href="index.cgi" class="arrow"><span class="material-icons">')
 	print('arrow_back')
 	print('</span></a>')

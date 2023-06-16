@@ -29,10 +29,9 @@ try:
 	# Making query
 	sql='INSERT INTO pay VALUES (%s, %s);'
 	data = (order_no, cust_no)
+	# Feed the data to the SQL query as follows to avoid SQL injection
 	cursor.execute(sql, data)
 	connection.commit()
-
-	# The string has the {}, the variables inside format() will replace the {}
 	print('<p>Order "{}" has been payed.</p>'.format(order_no))
 
     # Closing connection
